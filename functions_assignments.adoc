@@ -1,0 +1,130 @@
+= Functions Assignment
+
+Author: Harshini
+
+== 1. Difference between Formal Parameter and Actual Argument
+
+Formal parameters are the variables declared in the function definition that receive values.
+
+Actual arguments are the values passed during the function call.
+
+Example:
+
+[source,c]
+----
+void add(int a, int b)
+{
+    printf("%d", a+b);
+}
+
+int main()
+{
+    add(5,3);
+}
+----
+
+Here, a and b are formal parameters.
+
+5 and 3 are actual arguments.
+
+== 2. Difference between Call by Value and Call by Reference
+
+In Call by Value, a copy of the variable is passed to the function. Any changes made inside the function do not affect the original variable.
+
+In Call by Reference, the address of the variable is passed to the function. Any changes made inside the function affect the original variable.
+
+Call by Value Example:
+
+[source,c]
+----
+void modify(int x)
+{
+    x = 100;
+}
+
+int main()
+{
+    int a = 10;
+    modify(a);
+
+    printf("%d", a);
+}
+----
+
+Output:
+
+----
+10
+----
+
+Call by Reference Example:
+
+[source,c]
+----
+void modify(int *x)
+{
+    *x = 100;
+}
+
+int main()
+{
+    int a = 10;
+    modify(&a);
+
+    printf("%d", a);
+}
+----
+
+Output:
+
+----
+100
+----
+
+== 3. Why do we use a function prototype (declaration) before the main() function?
+
+A function prototype is used to inform the compiler about the function's name, return type, and parameters before it is called.
+
+If a function is defined after main() and is called inside main(), the compiler will not know about the function unless a prototype is provided.
+
+Example:
+
+[source,c]
+----
+#include<stdio.h>
+
+void greet();
+
+int main()
+{
+    greet();
+    return 0;
+}
+
+void greet()
+{
+    printf("Hello");
+}
+----
+
+== 4. What does the void keyword signify when used as a function's return type?
+
+The void keyword indicates that a function does not return any value to the calling function. It only performs the specified task and terminates.
+
+Example:
+
+[source,c]
+----
+#include<stdio.h>
+
+void greet()
+{
+    printf("Hello");
+}
+
+int main()
+{
+    greet();
+    return 0;
+}
+----
