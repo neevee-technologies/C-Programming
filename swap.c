@@ -11,18 +11,16 @@ void swap(int *a, int *b)
 
 int main()
 {
-    int x, y;
+    int num1, num2;
 
     printf("Enter two numbers: ");
-    scanf("%d %d", &x, &y);
+    scanf("%d %d", &num1, &num2);
 
-    printf("Before swapping:\n");
-    printf("x = %d, y = %d\n", x, y);
+    printf("Before swapping: %d %d\n", num1, num2);
 
-    swap(&x, &y);
+    swap(&num1, &num2);
 
-    printf("After swapping:\n");
-    printf("x = %d, y = %d\n", x, y);
+    printf("After swapping: %d %d\n", num1, num2);
 
     return 0;
 }
